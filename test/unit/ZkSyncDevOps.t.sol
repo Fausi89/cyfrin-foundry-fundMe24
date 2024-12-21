@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.19;
+pragma solidity ^0.8.0;
 
-import {Test, console} from "forge-std/Test.sol";
+import {Test, console} from "lib/forge-std/src/Test.sol";
 import {ZkSyncChainChecker} from "lib/foundry-devops/src/ZkSyncChainChecker.sol";
 import {FoundryZkSyncChecker} from "lib/foundry-devops/src/FoundryZkSyncChecker.sol";
+import {AggregatorV3Interface} from "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 contract ZkSyncDevOps is Test, ZkSyncChainChecker, FoundryZkSyncChecker {
     // Remove the `skipZkSync`, then run `forge test --mt testZkSyncChainFails --zksync` and this will fail!
